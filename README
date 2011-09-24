@@ -1,0 +1,3 @@
+To add this validation class to you own Zend Framework library simply copy
+the file into YOUR_LIBRARY/Validate and change the class name to reflect the
+name of your library.

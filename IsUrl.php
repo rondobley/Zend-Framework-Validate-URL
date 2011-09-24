@@ -5,14 +5,14 @@
 <?php
 class Rwd_Validate_IsUrl extends Zend_Validate_Abstract
 {
-	/**
-	 * Error codes
-	 * @const string
-	 */
+    /**
+     * Error codes
+     * @const string
+     */
     const INVALID_URL = 'invalidUrl';
 
-	/**
-	 * Error messages
+    /**
+     * Error messages
      * @var array
      */
     protected $_messageTemplates = array(
@@ -32,9 +32,9 @@ class Rwd_Validate_IsUrl extends Zend_Validate_Abstract
     public function isValid($value)
     {
         if (!is_string($value)) {
-		    $this->_error(self::INVALID_URL);
-		    return false;
-		}
+            $this->_error(self::INVALID_URL);
+             return false;
+        }
 		
         $this->_setValue($value);
         //get a Zend_Uri_Http object for our URL, this will only accept http(s) schemes

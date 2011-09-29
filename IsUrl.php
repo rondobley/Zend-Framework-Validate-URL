@@ -1,8 +1,7 @@
+<?php
 /**
- *
  * @author Ron Dobley
  */
-<?php
 class Rwd_Validate_IsUrl extends Zend_Validate_Abstract
 {
     /**

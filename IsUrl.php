@@ -48,8 +48,12 @@ class Rwd_Validate_IsUrl extends Zend_Validate_Abstract
         $hostnameValidator = new Zend_Validate_Hostname(Zend_Validate_Hostname::ALLOW_DNS); //do not allow local hostnames, this is the default
 
         if (!$hostnameValidator->isValid($uriHttp->getHost())) {
-            $this->_error(self::INVALID_URL);
-            return false;
+        	// also allow local hostnames (because of new TLD's)
+		$hostnameValidator = new Zend_Validate_Hostname(Zend_Validate_Hostname::ALLOW_LOCAL);
+		if (!$hostnameValidator->isValid($uriHttp->getHost())) {
+			$this->_error(self::INVALID_URL);
+    			return false;	
+		}
         }
         return true;
     }
